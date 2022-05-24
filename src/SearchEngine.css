@@ -1,0 +1,35 @@
+
+.SearchEngine input {
+    width: 80%;
+    height: 40px;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background-color: inherit;
+    color:#fff;
+    outline: none;
+}
+
+
+button {
+    width: 100px;
+    border-radius: 30px;
+    padding: 8px 10px;
+    background: #fae08b;
+    outline: none;
+    border: none;
+    color: chocolate;
+}
+
+
+@media (max-width:579px) {
+.SearchEngine input {
+    width: 70%;
+    height: 50px;
+}
+button {
+    width: 80px;
+}
+
+
+}

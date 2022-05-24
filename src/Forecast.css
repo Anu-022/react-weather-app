@@ -1,0 +1,14 @@
+.Forecast {
+    background-color: #fff;
+    opacity: 0.8;
+    color: #282c34;
+    margin: 0;
+}
+.forecast-div {
+    margin: 15px 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.forecast-info {
+    border-bottom: 1px solid #ddd;
+}
