@@ -17,7 +17,11 @@ export default function MainDisplay (){
             <li>Humidity: 80%</li>
             <li>Wind: 3.5 km/hr</li>
             </ul>
-            <h2>9°C</h2>
+            <div>
+            <span className="temperature">9</span>
+            <span className="units">°C</span>
+            </div>
+            
             <p>Abuja, Nigeria</p>
             <p className="copyright">Weather App is Designed by AnuSanya & <a href="https://github.com/Anu-022/react-weather-app">opensourced</a></p>   
         </div>

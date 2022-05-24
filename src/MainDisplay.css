@@ -7,11 +7,17 @@
 .MainDisplay li {
     list-style: none;
 }
-.MainDisplay h2 {
+.MainDisplay .temperature{
     font-weight: 500;
     font-size: 90px;
     margin-top: 20px;
     margin-bottom: 0px;
+}
+.units {
+    font-size: 20px;
+    position: relative;
+    top: -52px;
+    left: -2px;
 }
 .weather-description {
     font-size: 40px;
