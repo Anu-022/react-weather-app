@@ -8,11 +8,15 @@ export default function MainDisplay (){
             <ul>
                 <li>Saturday</li>
                 <li>May 19, 2022</li>
-                <li className="weather-description mt-3 text-center mt-5">Mostly Cloudy</li>
+                <li className="weather-description mt-3 text-center">Mostly Cloudy</li>
             </ul>
             <div className="weather-icon text-center">
             <ReactAnimatedWeather icon= {"CLOUDY"} color={"yellow"} size= {150} animate={false} />
             </div>
+            <ul>
+            <li>Humidity: 80%</li>
+            <li>Wind: 3.5 km/hr</li>
+            </ul>
             <h2>9°C</h2>
             <p>Abuja, Nigeria</p>
             <p className="copyright">Weather App is Designed by AnuSanya & <a href="https://github.com/Anu-022/react-weather-app">opensourced</a></p>   

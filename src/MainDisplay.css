@@ -10,11 +10,11 @@
 .MainDisplay h2 {
     font-weight: 500;
     font-size: 90px;
-    margin-top: 60px;
+    margin-top: 20px;
     margin-bottom: 0px;
 }
 .weather-description {
-    font-size: 30px;
+    font-size: 40px;
 }
 .copyright {
     width:fit-content;
