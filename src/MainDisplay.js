@@ -15,7 +15,7 @@ export default function MainDisplay (){
             </div>
             <h2>9°C</h2>
             <p>Abuja, Nigeria</p>
-            <p className="copyright">Weather App is Designed by AnuSanya & opensourced</p>   
+            <p className="copyright">Weather App is Designed by AnuSanya & <a href="https://github.com/Anu-022/react-weather-app">opensourced</a></p>   
         </div>
     )
 }
