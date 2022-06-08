@@ -1,13 +1,35 @@
 .MainDisplay {
     margin: 0 30px;
 }
+.MainDisplay input {
+    width: 80%;
+    height: 40px;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background-color: inherit;
+    color:#fff;
+    outline: none;}
+    
+    
+button {
+    width: 100px;
+    border-radius: 30px;
+    padding: 8px 10px;
+    margin-left: 30px;
+    background: #fae08b;
+    outline: none;
+    border: none;
+    color: chocolate;
+    }
 .MainDisplay ul{
     padding: 0;
+    margin-top: 20px;
 }
 .MainDisplay li {
     list-style: none;
 }
-.MainDisplay .temperature{
+.MainDisplay .temp-style{
     font-weight: 500;
     font-size: 90px;
     margin-top: 20px;
@@ -19,26 +41,28 @@
     top: -52px;
     left: -2px;
 }
+.units a {
+    text-decoration: none;
+    color: #fff;
+}
 .weather-description {
     font-size: 40px;
 }
-.copyright {
-    width:fit-content;
-    font-weight: 400;
-    font-size: 14px;
-    position: relative;
-    bottom: -15px;
-    left: 60%;
-    z-index: 1;
-    color: #282c34;
 
-}
 
 @media (max-width:579px) {
-.MainDisplay {
+    input {
+        width: 70%;
+        height: 50px;
+    }
+    button {
+         width: 80px;
+    }
+        
+   .MainDisplay {
     text-align: center;
     max-width: 100%;
-}
+    }
 .copyright{
     display: none;
 }
