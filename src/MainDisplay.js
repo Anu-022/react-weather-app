@@ -6,6 +6,7 @@ import FormattedtDate from "./FormattedDate";
 import FormatttedTime from "./FormattedTime";
 import Forecast from "./Forecast";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function MainDisplay(props) {
     let today = new Date();
@@ -47,11 +48,7 @@ export default function MainDisplay(props) {
      }
      
          
-       // convert celsius to Fahrenheit
-        //function showFahrenheit(event) {
-          //  event.preventDefault();
-            //setTemperature(Math.round(((temperature*9) / 5 +32)));
-        //}
+       
        
         //convert fahreheit to celsius
         //function showCelsius(event) {
@@ -87,8 +84,7 @@ export default function MainDisplay(props) {
                       <li>Wind: {weatherObj.wind} km/hr</li>
                   </ul>
                   <div className="weather-temperature">
-                       <span className="temp-style">{weatherObj.temperature}</span>
-                       <span className="units"><a href="#" >°C</a> | <a href="#">°F</a></span>
+                       <WeatherTemperature celsius={weatherObj.temperature} />
                  </div> 
                </div>
                <div className= "col-md-5">
