@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import "./MainDisplay.css";
 import axios from "axios";
-import ReactAnimatedWeather from 'react-animated-weather';
 import FormattedtDate from "./FormattedDate";
 import FormatttedTime from "./FormattedTime";
 import Forecast from "./Forecast";
@@ -59,7 +58,7 @@ export default function MainDisplay(props) {
 
       if(weatherObj.ready) {
           return (
-              <div className="MainDisplay" mt-3>
+              <div className="MainDisplay mt-3">
                   <div className="row">
                       <div className= "col-md-7 pt-4">
                            <form>
