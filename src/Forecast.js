@@ -16,7 +16,7 @@ export default function Forecast() {
                 </div>
             </div>
             <div className= "forecast-div">
-            <div className='forecast-description d-flex justify-content-between mt-2'>
+            <div className='forecast-description d-flex justify-content-between mt-2 '>
                 <h3>Rain</h3>
                 <ReactAnimatedWeather icon= {"RAIN"} color={"yellow"} size={50} animate={false} />
                 </div>  
@@ -50,7 +50,7 @@ export default function Forecast() {
                 <h3>Partly Cloudy</h3>
                 <ReactAnimatedWeather icon= {"PARTLY_CLOUDY_DAY"} color={"yellow"} size={50} animate={false} />
                 </div>  
-                <div className= "forecast-info d-flex justify-content-between mt-3 pb-2">
+                <div className= "forecast-info d-flex justify-content-between mt-3 mb-0">
                     <h3>12°C</h3>
                     <p>21.05.2022</p>
                 </div>

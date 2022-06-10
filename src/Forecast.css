@@ -12,3 +12,8 @@
 .forecast-info {
     border-bottom: 1px solid #ddd;
 }
+@media (max-width:579px) {
+    .forecast-div{
+        padding: 5px;
+    }
+}
