@@ -1,0 +1,22 @@
+
+.forecastDay-div {
+    margin: 15px 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.forecast-info {
+    border-bottom: 1px solid #ddd;
+}
+.forecast-description h3{
+    text-transform: capitalize;
+    font-size: 25px;
+}
+.Forecast .min-temperature {
+        opacity: 0.7;
+    }
+
+@media (max-width:579px) {
+    .forecast-div{
+        padding: 5px;
+    }
+}

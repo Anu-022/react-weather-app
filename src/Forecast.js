@@ -1,60 +1,49 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./Forecast.css";
-import ReactAnimatedWeather from 'react-animated-weather';
+import axios from 'axios';
+import ForecastDay from './ForecastDay';
 
-export default function Forecast() {
-    return (
-        <div className= "Forecast pt-2 pb-2">
-            <div className= "forecast-div">
-                <div className='forecast-description d-flex justify-content-between mt-2'>
-                <h3>Cloudy</h3>
-                <ReactAnimatedWeather icon= {"CLOUDY"} color={"yellow"} size={50} animate={false} />
-                </div>  
-                <div className= "forecast-info d-flex justify-content-between mt-3">
-                    <h3>12°C</h3>
-                    <p>21.05.2022</p>
+export default function Forecast(props) {
+    const [loaded, setLoaded] = useState(false);
+    const [forecast, setForecast] = useState(null);
+
+    useEffect(()=> {
+        setLoaded(false);
+    }, [props.data.coord]);
+
+     function handleForecast(response){
+        setForecast(response.data.daily);
+        setLoaded(true); 
+     }
+        
+     function load() {
+        const apiKey = "a2cad1909b029ab4483669f9e477787b";
+        let latitude = props.data.coord.lat;
+        let longitude = props.data.coord.lon;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?&lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(handleForecast);
+     }
+        if (loaded) {
+        
+           return (
+                <div className= "Forecast pt-2 pb-2">
+                    {forecast.map(function(forecast, index){
+                        if (index < 5) {
+                        return (
+                            <div key={index} >
+                                <ForecastDay data ={forecast} />
+                            </div>
+                        );
+                      } else {
+                          return null;
+                      }
+                    })}
+                    
                 </div>
-            </div>
-            <div className= "forecast-div">
-            <div className='forecast-description d-flex justify-content-between mt-2 '>
-                <h3>Rain</h3>
-                <ReactAnimatedWeather icon= {"RAIN"} color={"yellow"} size={50} animate={false} />
-                </div>  
-                <div className= "forecast-info d-flex justify-content-between mt-3">
-                    <h3>12°C</h3>
-                    <p>21.05.2022</p>
-                </div>
-            </div>
-            <div className= "forecast-div">
-            <div className='forecast-description d-flex justify-content-between mt-2'>
-                <h3>Sunny</h3>
-                <ReactAnimatedWeather icon= {"CLEAR_DAY"} color={"yellow"} size={50} animate={false} />
-                </div>  
-                <div className= "forecast-info d-flex justify-content-between mt-3">
-                    <h3>12°C</h3>
-                    <p>21.05.2022</p>
-                </div>
-            </div>
-            <div className= "forecast-div">
-            <div className='forecast-description d-flex justify-content-between mt-2'>
-                <h3>Cloudy</h3>
-                <ReactAnimatedWeather icon= {"PARTLY_CLOUDY_DAY"} color={"yellow"} size={50} animate={false} />
-                </div>  
-                <div className= "forecast-info d-flex justify-content-between mt-3">
-                    <h3>12°C</h3>
-                    <p>21.05.2022</p>
-                </div>
-            </div>
-            <div className= "forecast-div">
-            <div className='forecast-description d-flex justify-content-between mt-2'>
-                <h3>Partly Cloudy</h3>
-                <ReactAnimatedWeather icon= {"PARTLY_CLOUDY_DAY"} color={"yellow"} size={50} animate={false} />
-                </div>  
-                <div className= "forecast-info d-flex justify-content-between mt-3 mb-0">
-                    <h3>12°C</h3>
-                    <p>21.05.2022</p>
-                </div>
-            </div> 
-        </div>
-    )
+    );
+}
+else {
+         load()  ;
+        return null;
+ }
 }

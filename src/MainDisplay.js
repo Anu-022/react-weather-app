@@ -8,18 +8,18 @@ import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 
 export default function MainDisplay(props) {
-    let today = new Date();
-    let date = today.getDay();
-    console.log(date);
+   
     const [city, setCity] = useState(props.defaultCity);
     const [weatherObj, setWeatherObj] = useState({ready: false});
     
     // function to display temperature, humidity and wind values from the openweather api
     function handleResponse(response) {
         console.log(response.data);
+
         setWeatherObj({
             ready: true,
             city: response.data.name,
+            coord: response.data.coord,
             date: new Date(response.data.dt*1000),
             humidity: response.data.main.humidity,
             wind: Math.round(response.data.wind.speed),
@@ -28,7 +28,6 @@ export default function MainDisplay(props) {
             temperature: Math.round(response.data.main.temp),
             icon: response.data.weather[0].icon,
         });
-
     }
     // search function
     function search() {
@@ -44,6 +43,8 @@ export default function MainDisplay(props) {
      
      function changeCity(event) {
          setCity(event.target.value);
+         console.log(city)
+         
      }
      
          
@@ -58,7 +59,7 @@ export default function MainDisplay(props) {
 
       if(weatherObj.ready) {
           return (
-              <div className="MainDisplay mt-3">
+              <div className="MainDisplay">
                   <div className="row">
                       <div className= "col-md-7 pt-4">
                            <form>
@@ -76,7 +77,7 @@ export default function MainDisplay(props) {
                                <li className="weather-description mt-3 text-center">{weatherObj.description}</li>
                            </ul>
                            <div className="weather-icon text-center">
-                               <WeatherIcon code={weatherObj.icon}/>
+                               <WeatherIcon code={weatherObj.icon} size ={150}/>
                            </div>
                    <ul>
                       <li>Humidity: {weatherObj.humidity}%</li>
@@ -87,7 +88,7 @@ export default function MainDisplay(props) {
                  </div> 
                </div>
                <div className= "col-md-5">
-                    <Forecast />
+                    <Forecast data = {weatherObj} size={50} />
                </div>
            </div>
            <div className="copyright">Weather App is Designed by AnuSanya and 
